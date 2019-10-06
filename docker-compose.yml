@@ -6,8 +6,8 @@ services:
     volumes:
       - ./:/go/src/ethereum_client
     command: bash -c "
-      bash /go/src/ethereum_client/setup/dep_fix.sh
-      && go run /go/src/ethereum_client/main.go
+      bash /go/src/ethereum_client/ganache.sh
+      && go run /go/src/ethereum_client/cmd/clientd/main.go
       "
       
 
