@@ -1,0 +1,8 @@
+version: '3.1'
+services:
+  test:
+    build: .
+    container_name: test_runner
+    volumes:
+      - ./:/go/src/ethereum_client
+    command: go test 
