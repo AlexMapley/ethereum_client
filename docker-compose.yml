@@ -5,7 +5,11 @@ services:
     container_name: main
     volumes:
       - ./:/go/src/ethereum_client
-    command: go run /go/src/ethereum_client/main.go
+    command: bash -c "
+      bash /go/src/ethereum_client/setup/dep_fix.sh
+      && go run /go/src/ethereum_client/main.go
+      "
+      
 
   test:
     build: .
