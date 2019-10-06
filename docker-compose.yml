@@ -1,5 +1,12 @@
 version: '3.1'
 services:
+  main:
+    build: .
+    container_name: main
+    volumes:
+      - ./:/go/src/ethereum_client
+    command: go run /go/src/ethereum_client/main.go
+
   test:
     build: .
     container_name: test_runner
